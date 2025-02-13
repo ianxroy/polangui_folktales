@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "299786423415",
+    "project_id": "polangui-folktales",
+    "storage_bucket": "polangui-folktales.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299786423415:android:aabc304c152e21f5318a72",
+        "android_client_info": {
+          "package_name": "com.bupc.polanguifolktales"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmBbgx06_IEzdkrMA4GIH2oBWswkFBoKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
