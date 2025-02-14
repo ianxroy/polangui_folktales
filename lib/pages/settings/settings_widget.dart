@@ -5,25 +5,25 @@ import '/components/top_nav_bar/top_nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'dashboard_model.dart';
-export 'dashboard_model.dart';
+import 'settings_model.dart';
+export 'settings_model.dart';
 
-class DashboardWidget extends StatefulWidget {
-  const DashboardWidget({super.key});
+class SettingsWidget extends StatefulWidget {
+  const SettingsWidget({super.key});
 
   @override
-  State<DashboardWidget> createState() => _DashboardWidgetState();
+  State<SettingsWidget> createState() => _SettingsWidgetState();
 }
 
-class _DashboardWidgetState extends State<DashboardWidget> {
-  late DashboardModel _model;
+class _SettingsWidgetState extends State<SettingsWidget> {
+  late SettingsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DashboardModel());
+    _model = createModel(context, () => SettingsModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -56,7 +56,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                     model: _model.navigationBarModel,
                     updateCallback: () => safeSetState(() {}),
                     child: NavigationBarWidget(
-                      selectedNavigation: 'home',
+                      selectedNavigation: 'settings',
                     ),
                   ),
                   Expanded(
@@ -157,7 +157,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                   safeSetState(() {}),
                                               child: BaranggayCardWidget(
                                                 key: Key(
-                                                  'Keyps7_${wrapBarangayRecord.reference.id}',
+                                                  'Keyz3i_${wrapBarangayRecord.reference.id}',
                                                 ),
                                                 brgImage:
                                                     wrapBarangayRecord.image,

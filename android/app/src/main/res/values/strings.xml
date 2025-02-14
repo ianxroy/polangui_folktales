@@ -3,6 +3,6 @@
     <string name="app_name">Polangui Folktales</string>
     <string name="facebook_app_id">1363712351713827</string>
     <string name="fb_login_protocol_scheme">fb1363712351713827</string>
-    
+     <string name="facebook_client_token">f43f8b13903e098df7d140e299d2f64f</string>
           
 </resources>

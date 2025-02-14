@@ -5,25 +5,25 @@ import '/components/top_nav_bar/top_nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'dashboard_model.dart';
-export 'dashboard_model.dart';
+import 'logout_model.dart';
+export 'logout_model.dart';
 
-class DashboardWidget extends StatefulWidget {
-  const DashboardWidget({super.key});
+class LogoutWidget extends StatefulWidget {
+  const LogoutWidget({super.key});
 
   @override
-  State<DashboardWidget> createState() => _DashboardWidgetState();
+  State<LogoutWidget> createState() => _LogoutWidgetState();
 }
 
-class _DashboardWidgetState extends State<DashboardWidget> {
-  late DashboardModel _model;
+class _LogoutWidgetState extends State<LogoutWidget> {
+  late LogoutModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DashboardModel());
+    _model = createModel(context, () => LogoutModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -56,7 +56,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                     model: _model.navigationBarModel,
                     updateCallback: () => safeSetState(() {}),
                     child: NavigationBarWidget(
-                      selectedNavigation: 'home',
+                      selectedNavigation: 'logout',
                     ),
                   ),
                   Expanded(
@@ -157,7 +157,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                   safeSetState(() {}),
                                               child: BaranggayCardWidget(
                                                 key: Key(
-                                                  'Keyps7_${wrapBarangayRecord.reference.id}',
+                                                  'Keygum_${wrapBarangayRecord.reference.id}',
                                                 ),
                                                 brgImage:
                                                     wrapBarangayRecord.image,

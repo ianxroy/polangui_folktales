@@ -5,25 +5,25 @@ import '/components/top_nav_bar/top_nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'dashboard_model.dart';
-export 'dashboard_model.dart';
+import 'activities_model.dart';
+export 'activities_model.dart';
 
-class DashboardWidget extends StatefulWidget {
-  const DashboardWidget({super.key});
+class ActivitiesWidget extends StatefulWidget {
+  const ActivitiesWidget({super.key});
 
   @override
-  State<DashboardWidget> createState() => _DashboardWidgetState();
+  State<ActivitiesWidget> createState() => _ActivitiesWidgetState();
 }
 
-class _DashboardWidgetState extends State<DashboardWidget> {
-  late DashboardModel _model;
+class _ActivitiesWidgetState extends State<ActivitiesWidget> {
+  late ActivitiesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DashboardModel());
+    _model = createModel(context, () => ActivitiesModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -56,7 +56,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                     model: _model.navigationBarModel,
                     updateCallback: () => safeSetState(() {}),
                     child: NavigationBarWidget(
-                      selectedNavigation: 'home',
+                      selectedNavigation: 'activities',
                     ),
                   ),
                   Expanded(
@@ -157,7 +157,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                   safeSetState(() {}),
                                               child: BaranggayCardWidget(
                                                 key: Key(
-                                                  'Keyps7_${wrapBarangayRecord.reference.id}',
+                                                  'Key8og_${wrapBarangayRecord.reference.id}',
                                                 ),
                                                 brgImage:
                                                     wrapBarangayRecord.image,

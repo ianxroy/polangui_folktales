@@ -5,25 +5,25 @@ import '/components/top_nav_bar/top_nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'dashboard_model.dart';
-export 'dashboard_model.dart';
+import 'notifications_model.dart';
+export 'notifications_model.dart';
 
-class DashboardWidget extends StatefulWidget {
-  const DashboardWidget({super.key});
+class NotificationsWidget extends StatefulWidget {
+  const NotificationsWidget({super.key});
 
   @override
-  State<DashboardWidget> createState() => _DashboardWidgetState();
+  State<NotificationsWidget> createState() => _NotificationsWidgetState();
 }
 
-class _DashboardWidgetState extends State<DashboardWidget> {
-  late DashboardModel _model;
+class _NotificationsWidgetState extends State<NotificationsWidget> {
+  late NotificationsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DashboardModel());
+    _model = createModel(context, () => NotificationsModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -56,7 +56,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                     model: _model.navigationBarModel,
                     updateCallback: () => safeSetState(() {}),
                     child: NavigationBarWidget(
-                      selectedNavigation: 'home',
+                      selectedNavigation: 'notifications',
                     ),
                   ),
                   Expanded(
@@ -157,7 +157,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                   safeSetState(() {}),
                                               child: BaranggayCardWidget(
                                                 key: Key(
-                                                  'Keyps7_${wrapBarangayRecord.reference.id}',
+                                                  'Keyq6f_${wrapBarangayRecord.reference.id}',
                                                 ),
                                                 brgImage:
                                                     wrapBarangayRecord.image,

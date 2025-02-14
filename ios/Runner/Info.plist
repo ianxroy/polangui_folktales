@@ -53,7 +53,9 @@
     <key>FacebookDisplayName</key>
     <string>Polangui Folktales</string>
 
-    
+    <key>FacebookClientToken</key>
+    <string>f43f8b13903e098df7d140e299d2f64f</string>
+
 
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>

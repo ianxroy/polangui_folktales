@@ -2,10 +2,10 @@ import '/components/baranggay_card/baranggay_card_widget.dart';
 import '/components/navigation_bar/navigation_bar_widget.dart';
 import '/components/top_nav_bar/top_nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dashboard_widget.dart' show DashboardWidget;
+import 'account_widget.dart' show AccountWidget;
 import 'package:flutter/material.dart';
 
-class DashboardModel extends FlutterFlowModel<DashboardWidget> {
+class AccountModel extends FlutterFlowModel<AccountWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for navigationBar component.

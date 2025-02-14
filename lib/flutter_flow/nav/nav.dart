@@ -95,14 +95,61 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => DashboardWidget(),
         ),
         FFRoute(
-          name: 'SignUp',
-          path: '/signup',
-          builder: (context, params) => SignUpWidget(),
+          name: 'hhh',
+          path: '/main',
+          builder: (context, params) => HhhWidget(),
         ),
         FFRoute(
           name: 'ForgotPass',
           path: '/recover',
           builder: (context, params) => ForgotPassWidget(),
+        ),
+        FFRoute(
+          name: 'SignUp',
+          path: '/signup',
+          builder: (context, params) => SignUpWidget(),
+        ),
+        FFRoute(
+          name: 'Folktales',
+          path: '/folktales',
+          requireAuth: true,
+          builder: (context, params) => FolktalesWidget(),
+        ),
+        FFRoute(
+          name: 'Activities',
+          path: '/activities',
+          requireAuth: true,
+          builder: (context, params) => ActivitiesWidget(),
+        ),
+        FFRoute(
+          name: 'Notifications',
+          path: '/notifications',
+          requireAuth: true,
+          builder: (context, params) => NotificationsWidget(),
+        ),
+        FFRoute(
+          name: 'Account',
+          path: '/account',
+          requireAuth: true,
+          builder: (context, params) => AccountWidget(),
+        ),
+        FFRoute(
+          name: 'Settings',
+          path: '/settings',
+          requireAuth: true,
+          builder: (context, params) => SettingsWidget(),
+        ),
+        FFRoute(
+          name: 'logout',
+          path: '/logout',
+          requireAuth: true,
+          builder: (context, params) => LogoutWidget(),
+        ),
+        FFRoute(
+          name: 'Help',
+          path: '/help',
+          requireAuth: true,
+          builder: (context, params) => HelpWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -53,13 +53,16 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
             children: [
               Opacity(
                 opacity: 0.2,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/Cover.jpg',
-                    width: double.infinity,
-                    height: double.infinity,
-                    fit: BoxFit.cover,
+                child: Align(
+                  alignment: AlignmentDirectional(0.0, 0.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/Cover.jpg',
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -82,7 +85,20 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
                               .override(
                                 fontFamily: 'Antic Didone',
                                 color: Colors.white,
-                                fontSize: 140.0,
+                                fontSize: () {
+                                  if (MediaQuery.sizeOf(context).width <
+                                      kBreakpointSmall) {
+                                    return 20.0;
+                                  } else if (MediaQuery.sizeOf(context).width <
+                                      kBreakpointMedium) {
+                                    return 40.0;
+                                  } else if (MediaQuery.sizeOf(context).width <
+                                      kBreakpointLarge) {
+                                    return 140.0;
+                                  } else {
+                                    return 140.0;
+                                  }
+                                }(),
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w100,
                               ),
@@ -99,7 +115,7 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
                           textAlign: TextAlign.start,
                           style:
                               FlutterFlowTheme.of(context).labelLarge.override(
-                            fontFamily: 'Noto Serif Georgian',
+                            fontFamily: 'Open Sans',
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 20.0,
                             letterSpacing: 0.0,
@@ -135,6 +151,7 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
                                           _model.emailFieldTextController,
                                       focusNode: _model.emailFieldFocusNode,
                                       autofocus: true,
+                                      autofillHints: [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: false,
@@ -262,6 +279,63 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
                                           elevation: 4.0,
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          hoverColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .accent1,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 12.0, 0.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          if (_model.emailFieldTextController
+                                              .text.isEmpty) {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Email required!',
+                                                ),
+                                              ),
+                                            );
+                                            return;
+                                          }
+                                          await authManager.resetPassword(
+                                            email: _model
+                                                .emailFieldTextController.text,
+                                            context: context,
+                                          );
+                                        },
+                                        text: 'RETURN TO LOG IN',
+                                        options: FFButtonOptions(
+                                          width: double.infinity,
+                                          height: 60.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily: 'Open Sans',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          elevation: 4.0,
+                                          borderSide: BorderSide(
                                             width: 1.0,
                                           ),
                                           borderRadius:
